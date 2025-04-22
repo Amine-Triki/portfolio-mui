@@ -9,7 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import {NavLink} from "react-router-dom";
-import AmineLogo from "../assets/amine96.png";
+import AmineLogo from "../assets/4-157-71-68080953ce2d3.webp";
 
 const pages = ["Home", "Projects", "Skills", "Contact"];
 
@@ -25,7 +25,9 @@ function Nav() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="static"   sx={{
+            background: "linear-gradient(to right, #2c0c92, #ffffff)", 
+          }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography

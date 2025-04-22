@@ -14,8 +14,10 @@ import XIcon from '@mui/icons-material/X';
 import React from "react";
 
 
+const MotionAnchor = motion.a;
+
 const iconStyle = {
-    fontSize: 50,
+    fontSize: 40,
     color: "primary.main",
     "&:hover": {
         color: "secondary.main",
@@ -55,8 +57,9 @@ function Home() {
                 }}>
                     <Box>
                         <Typography variant="body1">
-                            Hello , I am <Typography variant="h1"> Amine triki</Typography>
+                            Hello , I am 
                         </Typography>
+                        <Typography variant="h1"> Amine triki</Typography>
                         <Typography variant="h2">
                             I am Junior front end developer
                         </Typography>
@@ -93,7 +96,7 @@ function Home() {
                     </Box>
                     <Box sx={{display: "flex", gap: 2}}>
                         {socialLinks.map((item, index) => (
-                            <motion.a
+                            <MotionAnchor
                                 key={index}
                                 href={item.url}
                                 target="_blank"
@@ -103,7 +106,7 @@ function Home() {
                                 transition={{duration: 1, repeat: Infinity}}
                             >
                                 {React.cloneElement(item.icon, {sx: iconStyle})}
-                            </motion.a>
+                            </MotionAnchor>
                         ))}
                     </Box>
                 </Box>
