@@ -2,7 +2,7 @@ import {Box} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {motion} from "framer-motion";
 
-import AmineTrikiImg from "../assets/amine triki.webp";
+import AmineTrikiImg from "../../assets/amine triki.webp";
 
 
 import FacebookIcon from '@mui/icons-material/Facebook';
