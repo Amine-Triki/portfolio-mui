@@ -34,7 +34,7 @@ const socialLinks = [
     {icon: <InstagramIcon/>, url: "https://www.instagram.com/mr_amine_triki/"},
 ];
 
-function Home() {
+const Home = () => {
     return (
         <main>
             <Box

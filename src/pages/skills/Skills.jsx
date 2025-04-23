@@ -1,4 +1,4 @@
-function Skills() {
+const Skills = () => {
   return (
     <div>Skills</div>
   )

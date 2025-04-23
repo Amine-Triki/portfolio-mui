@@ -6,13 +6,8 @@ import Theme from './components/Theme'
 
 
 import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
-import Home from './pages/Home.jsx';
-import Contact from './pages/Contact.jsx';
-import Projects from './pages/Projects.jsx';
-import Skills from './pages/Skills.jsx';
-import NotFound from './pages/NotFound.jsx';
 
-
+import { Home, Skills, Projects, Contact, NotFound,  } from './pages/index';
 const Layout = () => (
     <>
         <Nav/>
