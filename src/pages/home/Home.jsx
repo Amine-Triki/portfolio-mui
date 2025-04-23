@@ -73,7 +73,7 @@ const Home = () => {
                         <Typography
                             variant="h3"
                             component="a"
-                            href="https://example.com/resume.pdf"
+                            href="https://mega.nz/file/WIciFbZK#giPo5Q3uIrClf12Truz60TxZoW6vnC6sTZyXNA9QbKk"
                             target="_blank"
                             rel="noopener noreferrer"
                             sx={{

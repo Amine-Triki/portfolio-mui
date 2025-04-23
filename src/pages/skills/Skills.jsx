@@ -74,9 +74,9 @@ const Skills = () => {
             }}
           >
             <Icons links={group1} animation={{ scale: [1, 1.3, 1] }} />
-            <Heading title="Keyword" subTitle="Basic understanding of" />
+            <Heading title="In Progress" subTitle="Basic understanding of" />
             <Icons links={group2} animation={{ rotate: [0, 10, -10, 0] }} />
-            <Heading title="Other Skills" subTitle="What I learned too " />
+            <Heading title="Other Skills" subTitle="Creative tools I use" />
             <Icons links={group3} animation={{ opacity: [1, 0.5, 1] }} />
           </Box>
         </Container>
