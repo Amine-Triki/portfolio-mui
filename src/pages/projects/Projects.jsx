@@ -71,7 +71,7 @@ const Projects = () => {
                       image={project.imageSrc}
                       alt={project.title}
                     />
-                    <CardContent>
+                    <CardContent sx={{ maxWidth: "260px" }}>
                       <Typography variant="h6" color="primary" gutterBottom>
                         {project.title}
                       </Typography>
@@ -91,6 +91,7 @@ const Projects = () => {
                           Github
                         </Button>
                       )}
+                      {project.link !== "" && (
                       <Button
                         variant="contained"
                         href={project.link}
@@ -100,7 +101,7 @@ const Projects = () => {
                       >
                         Preview
                       </Button>
-                    </CardActions>
+                      )}</CardActions>
                   </Card>
                 </Grid>
               ))}
