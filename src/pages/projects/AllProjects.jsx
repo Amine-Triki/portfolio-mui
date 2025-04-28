@@ -8,6 +8,7 @@ import ImgWeatherR from "/src/assets/wather-react-pwa.webp"
 import ImgPorW from "/src/assets/wordpress-portfolio.webp"
 import ImgGen from "/src/assets/generate-qr-code.webp"
 import ImgCurr from "/src/assets/currencyconverter.webp"
+import ImgMui from "/src/assets/portfolio-mui.webp"
 
 const projects = [
     {
@@ -92,6 +93,14 @@ const projects = [
       link: '',
       github:'https://github.com/Amine-Triki/CurrencyConverterJs',
       imageSrc: ImgCurr,
+    },
+    {
+      category: 'React',
+      title: 'personal website',
+      description: 'React + Mui',
+      link: 'https://portfolio-mui-delta.vercel.app/',
+      github:'https://github.com/Amine-Triki/portfolio-mui',
+      imageSrc: ImgMui,
     },
     // Add more projects as needed
   ];
