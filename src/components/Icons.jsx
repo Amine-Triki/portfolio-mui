@@ -12,7 +12,7 @@ const iconStyle = {
         cursor: "pointer",
     },
 };
-const Icons = ({links = [], animation = {scale: [1, 1.3, 1]}}, iconName) => {
+const Icons = ({links = [], animation = {scale: [1, 1.3, 1]}}, ) => {
     return (
         <Box sx={{display: "flex", gap: 6, justifyContent: "center", alignItems: "center", flexWrap: "wrap"}}>
             {links.map((item, index) => (
