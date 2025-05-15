@@ -90,7 +90,7 @@ const projects = [
       category: 'React',
       title: 'Currency Converter Website',
       description: 'React + bootstrap',
-      link: '',
+      link: 'https://currency-converter-js-nu.vercel.app/currencyConverter',
       github:'https://github.com/Amine-Triki/CurrencyConverterJs',
       imageSrc: ImgCurr,
     },
