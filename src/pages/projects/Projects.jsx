@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   Container,
@@ -11,18 +11,41 @@ import {
   CardContent,
   CardActions,
   Button,
+  CircularProgress,
 } from "@mui/material";
-import projects from "./AllProjects";
 import Heading from "../../components/Heading";
 
-const categories = ["all", "JavaScript", "Wordpress", "React"];
+const categories = ["all", "JavaScript", "Wordpress", "React", "NextJs"];
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/Amine-Triki/projects-data/main/projects.json')
+      .then(res => res.json())
+      .then(data => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error loading projects:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const handleCategoryChange = (event, newValue) => {
     setActiveCategory(newValue);
   };
+
+  if (loading) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <main>
@@ -67,7 +90,7 @@ const Projects = () => {
                   <Card sx={{ height: "100%" }}>
                     <CardMedia
                       component="img"
-                      height="150   "
+                      height="150"
                       image={project.imageSrc}
                       alt={project.title}
                     />
@@ -80,7 +103,7 @@ const Projects = () => {
                       </Typography>
                     </CardContent>
                     <CardActions sx={{ justifyContent: "space-around" }}>
-                      {project.category !== "Wordpress" && (
+                      {project.github && (
                         <Button
                           variant="contained"
                           href={project.github}
@@ -91,17 +114,18 @@ const Projects = () => {
                           Github
                         </Button>
                       )}
-                      {project.link !== "" && (
-                      <Button
-                        variant="contained"
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        sx={{ backgroundColor: "#BFECFF", color: "black" }}
-                      >
-                        Preview
-                      </Button>
-                      )}</CardActions>
+                      {project.link && (
+                        <Button
+                          variant="contained"
+                          href={project.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          sx={{ backgroundColor: "#BFECFF", color: "black" }}
+                        >
+                          Preview
+                        </Button>
+                      )}
+                    </CardActions>
                   </Card>
                 </Grid>
               ))}
