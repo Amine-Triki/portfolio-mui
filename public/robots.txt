@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://portfolio-mui-react.netlify.app/sitemap.xml
