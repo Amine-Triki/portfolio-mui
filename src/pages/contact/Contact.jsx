@@ -50,7 +50,7 @@ const Contact = () => {
                 <RiMailLine size={20} />
                 <Box>
                   <Typography fontWeight="bold">Email:</Typography>
-                  <Typography>Contact@aminetriki.com.tn</Typography>
+                  <Typography>amine.triki@live.com</Typography>
                 </Box>
               </Box>
             </Box>
