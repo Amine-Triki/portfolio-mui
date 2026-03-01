@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import Heading from "../../components/Heading";
 
-const categories = ["all", "JavaScript", "Wordpress", "React", "NextJs" , "vue"];
+const categories = ["all",  "Wordpress", "React", "NextJs" , "vue" , "Astro"];
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("all");
