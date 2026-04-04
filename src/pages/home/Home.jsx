@@ -1,5 +1,9 @@
+import { useState, useEffect } from "react";
+
+
 import {Box} from "@mui/material";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 import {motion} from "framer-motion";
 
 import AmineTrikiImg from "../../assets/amine triki.webp";
@@ -35,6 +39,32 @@ const socialLinks = [
 ];
 
 const Home = () => {
+      const [cvData, setCvData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://raw.githubusercontent.com/Amine-Triki/projects-data/main/cv.json")
+      .then(res => res.json())
+      .then(data => setCvData(data));
+  }, []);
+
+    const resumeButtonSx = {
+        my: 2,
+        textTransform: "none",
+        background: "#cddc39",
+        borderColor: "secondary.main",
+        borderRadius: 10,
+        px: 2,
+        py: 1,
+        color: "primary.main",
+        borderWidth: 1,
+        borderStyle: "solid",
+        "&:hover": {
+            background: "#dce775",
+            borderColor: "secondary.main",
+            textDecoration: "none",
+        },
+    };
+
     return (
         <main>
             <Box
@@ -70,29 +100,28 @@ const Home = () => {
                         <Typography variant="h3">
                             I use HTML ,CSS, JavaScript ( React ); I am a WordPress designer
                         </Typography>
-                        <Typography
-                            variant="h3"
-                            component="a"
-                            href="https://mega.nz/file/WIciFbZK#giPo5Q3uIrClf12Truz60TxZoW6vnC6sTZyXNA9QbKk"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            sx={{
-                                my: 2,
-
-                                textDecoration: "none",
-                                background: "#cddc39",
-                                borderColor: 'secondary.main',
-                                borderRadius: 10,
-                                p: 2,
-                                color: "primary.main",
-                                display: "inline-block",
-                                "&:hover": {
-                                    textDecoration: "underline",
-                                },
-                            }}
-                        >
-                            Download Resume
-                        </Typography>
+                        <Box sx={{display: "flex", gap: 2, flexWrap: "wrap", alignItems: "center"}}>
+                            <Button
+                                variant="contained"
+                                component="a"
+                                href={cvData?.cv?.en?.download || "#"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                sx={resumeButtonSx}
+                            >
+                                Download Resume
+                            </Button>
+                            <Button
+                                variant="contained"
+                                component="a"
+                                href={cvData?.cv?.en?.preview || "#"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                sx={resumeButtonSx}
+                            >
+                                Preview Resume
+                            </Button>
+                        </Box>
                     </Box>
                     <Box sx={{display: "flex", gap: 2}}>
                         {socialLinks.map((item, index) => (
